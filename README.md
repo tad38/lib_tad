@@ -48,7 +48,7 @@ Par exemple pour une interface d'objet avec une barre de menu en haut, une barre
 
 ## Réference et aides
 
-Pour une aide plus complète sur l'utilisation de la librairie et pour consulter la référence des objets et fonctions, je vous invite à vous rendre sur le wiki lib_tad de Github:
+Pour une aide plus complète sur l'utilisation de la librairie et pour consulter la référence des objets et fonctions, je vous invite à vous rendre sur le wiki de lib_tad:
 
 https://github.com/tad38/lib_tad/wiki
 
