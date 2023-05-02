@@ -32,11 +32,15 @@ Une fois que vous avez intégré ces deux lignes au fichier, vous pouvez profite
 
 Pour insérer un objet de la librairie dans vos pages web, il suffit de donner à un élément la classe adéquate.
 
-Par exemple pour une interface d'objet avec une barre de menu en haut et une barre latérale gauche et une partie contenu au centre, c'est la classe interface_hg_tad:
+Par exemple pour une interface d'objet avec une barre de menu en haut, une barre latérale gauche et une partie contenu au centre, on utilisera la classe `interface_hg_tad`:
 
 ```<div class="interface_hg_tad">
   <div style="background-color: red;"></div>
   <div style="background-color: green;"></div>
   <div style="background-color: blue;"></div>
 </div>```
+
+## Auteur
+
+Laurent TADDEÏ - Montricoux (82)
 
