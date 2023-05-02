@@ -20,7 +20,7 @@ Ensuite copiez le dossier lib_tad à la racine de votre site web PHP (XAMPP est 
 
 Au tout début du fichier avant le moindre caractère, il faut ajouter cette ligne:
 
-`<?php require("lib_tad/lib.php"); ?>`
+`php <?php require("lib_tad/lib.php"); ?>`
 
 Puis, au début de l'en-tête de votre fichier HTML (entre les balises `<head>` et `</head>`) avant d'inclure vos fichiers Javascript ou CSS:
 
