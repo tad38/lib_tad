@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+/* 
+    Interfaces prédéfinies avec les barres son choix autour du contenu. Toutes les possibilités ont été prises en compte.
+    Il suffit de préciser quelles barres sont présentes dans cet ordre:
+    h: haut
+    g: gauche
+    d: droite
+    b: bas
+*/
+
+/* Quatres barres */
+
+.interface_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+        grid-template-areas: 'haut haut haut' 'gauche contenu droite' 'bas bas bas'; grid-template-columns: var(--colonnes-interface); grid-template-rows: var(--lignes-interface); }
+.interface_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: haut; z-index: 30; }
+.interface_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: gauche; z-index: 10; }
+.interface_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_tad > *:nth-child(4) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: droite; z-index: 10; }
+.interface_tad > *:nth-child(5) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: bas; z-index: 20; }
+
+/* Trois barres */
+
+.interface_hgd_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+            grid-template-areas: 'haut haut haut' 'gauche contenu droite'; grid-template-columns: var(--colonnes-interface-hgd); grid-template-rows: var(--lignes-interface-hgd); }
+.interface_hgd_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: haut; z-index: 30; }
+.interface_hgd_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: gauche; z-index: 10; }
+.interface_hgd_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_hgd_tad > *:nth-child(4) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: droite; z-index: 10; }
+
+.interface_hgb_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+            grid-template-areas: 'haut haut' 'gauche contenu' 'bas bas'; grid-template-columns: var(--colonnes-interface-hgb); grid-template-rows: var(--lignes-interface-hgb); }
+.interface_hgb_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: haut; z-index: 30; }
+.interface_hgb_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: gauche; z-index: 10; }
+.interface_hgb_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_hgb_tad > *:nth-child(4) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: bas; z-index: 20; }
+
+.interface_hdb_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+            grid-template-areas: 'haut haut' 'contenu droite' 'bas bas'; grid-template-columns: var(--colonnes-interface-hdb); grid-template-rows: var(--lignes-interface-hdb); }
+.interface_hdb_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: haut; z-index: 30; }
+.interface_hdb_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_hdb_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: droite; z-index: 10; }
+.interface_hdb_tad > *:nth-child(4) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: bas; z-index: 20; }
+
+.interface_gdb_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+            grid-template-areas: 'gauche contenu droite' 'bas bas bas'; grid-template-columns: var(--colonnes-interface-gdb); grid-template-rows: var(--lignes-interface-gdb); }
+.interface_gdb_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: gauche; z-index: 10; }
+.interface_gdb_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_gdb_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: droite; z-index: 10; }
+.interface_gdb_tad > *:nth-child(4) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: bas; z-index: 20; }
+
+/* Deux barres */
+
+.interface_hg_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+           grid-template-areas: 'haut haut' 'gauche contenu'; grid-template-columns: var(--colonnes-interface-hg); grid-template-rows: var(--lignes-interface-hg); }
+.interface_hg_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: haut; z-index: 30; }
+.interface_hg_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: gauche; z-index: 10; }
+.interface_hg_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+
+.interface_hd_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+           grid-template-areas: 'haut haut' 'contenu droite'; grid-template-columns: var(--colonnes-interface-hd); grid-template-rows: var(--lignes-interface-hd); }
+.interface_hd_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: haut; z-index: 30; }
+.interface_hd_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_hd_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: droite; z-index: 10; }
+
+.interface_hb_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+           grid-template-areas: 'haut' 'contenu' 'bas'; grid-template-columns: var(--colonnes-interface-hb); grid-template-rows: var(--lignes-interface-hb); }
+.interface_hb_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: haut; z-index: 30; }
+.interface_hb_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_hb_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: bas; z-index: 20; }
+
+.interface_gd_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+           grid-template-areas: 'gauche contenu droite'; grid-template-columns: var(--colonnes-interface-gd); grid-template-rows: var(--lignes-interface-gd); }
+.interface_gd_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: gauche; z-index: 10; }
+.interface_gd_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_gd_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: droite; z-index: 10; }
+
+.interface_gb_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+        grid-template-areas: 'gauche contenu' 'bas bas'; grid-template-columns: var(--colonnes-interface-gb); grid-template-rows: var(--lignes-interface-gb); }
+.interface_gb_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: gauche; z-index: 10; }
+.interface_gb_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_gb_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: bas; z-index: 20; }
+
+.interface_db_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+        grid-template-areas: 'contenu droite' 'bas bas'; grid-template-columns: var(--colonnes-interface-db); grid-template-rows: var(--lignes-interface-db); }
+.interface_db_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_db_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: droite; z-index: 10; }
+.interface_db_tad > *:nth-child(3) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: bas; z-index: 20; }
+
+/* Une seule barre */
+
+.interface_h_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+        grid-template-areas: 'haut' 'contenu'; grid-template-columns: var(--colonnes-interface-h); grid-template-rows: var(--lignes-interface-h); }
+.interface_h_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: haut; z-index: 30; }
+.interface_h_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+
+.interface_g_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+        grid-template-areas: 'gauche contenu'; grid-template-columns: var(--colonnes-interface-g); grid-template-rows: var(--lignes-interface-g); }
+.interface_g_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: gauche; z-index: 10; }
+.interface_g_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+
+.interface_d_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+        grid-template-areas: 'contenu droite'; grid-template-columns: var(--colonnes-interface-d); grid-template-rows: var(--lignes-interface-d); }
+.interface_d_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_d_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: droite; z-index: 10; }
+
+.interface_b_tad { display: grid; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
+        grid-template-areas: 'contenu' 'bas'; grid-template-columns: var(--colonnes-interface-b); grid-template-rows: var(--lignes-interface-b); }
+.interface_b_tad > *:nth-child(1) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; overflow-x: hidden; overflow-y: auto; grid-area: contenu; z-index: 0; }
+.interface_b_tad > *:nth-child(2) { margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; grid-area: bas; z-index: 20; }
+
