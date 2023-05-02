@@ -28,15 +28,17 @@ Puis, au début de l'en-tête de votre fichier HTML (entre les balises <head> et
 
 Une fois que vous avez intégré ces deux lignes au fichier, vous pouvez profiter de la lib_tad.
 
-### Objets dynamiques
+### Objets prédéfinis
 
 Pour insérer un objet de la librairie dans vos pages web, il suffit de donner à un élément la classe adéquate.
 
-Par exemple pour une interface d'objet avec une barre de menu en haut et une barre latérale gauche, c'est la classe interface_hg_tad:
-'''
+Par exemple pour une interface d'objet avec une barre de menu en haut et une barre latérale gauche et une partie contenu au centre, c'est la classe interface_hg_tad:
+
+```
 <div class="interface_hg_tad">
   <div style="background-color: red;"></div>
   <div style="background-color: green;"></div>
   <div style="background-color: blue;"></div>
 </div>
-'''
+```
+
