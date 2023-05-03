@@ -54,5 +54,5 @@ https://github.com/tad38/lib_tad/wiki
 
 ## Auteur
 
-Laurent TADDEÏ - Montricoux (82)
+[Laurent TADDEÏ (Montricoux - 82)](mailto://laurent.taddei.38@gmail.com)  -  [hackoys](mailto://hackoys@gmail.com) sur [root-me](https://www.root-me.org/hackoys)
 
