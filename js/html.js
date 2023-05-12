@@ -4,13 +4,13 @@ var objet_global_html_tad = null;
 function eval_html(par_chaine) {
     let parser = new DOMParser();
     let docel = parser.parseFromString(par_chaine.toString(), "text/html");
-    if (docel && (docel.body.childNodes.length === 1)) { return docel.body.firstChild; } else { log("eval_html: la chaîne passée en paramètre n'a pas pu être analysé."); return null; }
+    if (docel && (docel.body.childNodes.length === 1)) { return docel.body.firstChild; } else { console.log("eval_html: la chaîne passée en paramètre n'a pas pu être analysé."); return null; }
 }
 // créé un élément à partir de son code HTML passé en paramètre et le retourne sous forme d'objet de classe 'ObjetDomTad'
 function eval_dom(par_chaine) {
     let parser = new DOMParser();
     let docel = parser.parseFromString(par_chaine.toString(), "text/html");
-    if (docel && (docel.body.childNodes.length === 1)) { return new ObjetDomTad([ docel.body.firstChild ]); } else { log("eval_html: la chaîne passée en paramètre n'a pas pu être analysé."); return null; }
+    if (docel && (docel.body.childNodes.length === 1)) { return new ObjetDomTad([ docel.body.firstChild ]); } else { console.log("eval_html: la chaîne passée en paramètre n'a pas pu être analysé."); return null; }
 }
 
 // Application d'une chaîne CSS normale sur un objet en passant par l'appel de propriétés CSS en Javascript ce qui permet de garder les anciens styles
@@ -34,3 +34,8 @@ function creer_css(par_objet, chaine) {
     }
     return par_objet;
 }
+
+/* Retourne l'index d'un élément HTML par rapport au tableau childNodes de sont parent */
+function index_child_nodes(par_el) { let ret = -1; for (let i = 0; i < par_el.parentNode.childNodes.length; i++) { if (par_el.parentNode.childNodes[i] === par_el) { ret = i; break; } } return ret; }
+/* Retourne l'index d'un élément HTML par rapport au tableau children de sont parent (ce qui prend en comtpe les nodes de texte par exemple qui sont ajoutés par les navigateurs) */
+function index_children(par_el) { let ret = -1; for (let i = 0; i < par_el.parentNode.children.length; i++) { if (par_el.parentNode.children[i] === par_el) { ret = i; break; } } return ret; }

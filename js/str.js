@@ -35,18 +35,16 @@ function mots(par_chaine, par_autorises) {
 }
 
 // Créé un extrait d'une chaine de par_max caracteres se situant autour du mot qui demarre a position et qui fait par_taille caracteres
-function extrait(par_chaine, par_max, par_index, par_taille, log) {
+function extrait(par_chaine, par_max, par_index, par_taille) {
     let chaine = String(par_chaine);
     let max = Number(par_max); if (isNaN(max)) { max = 50; }
     let index = Number(par_index); if (isNaN(index)) { index = 0; }
     let taille = Number(par_taille); if (isNaN(taille)) { taille = 0; }
     let moit_max = Math.floor(max / 2);
     let moit_taille = Math.floor(taille / 2);
-    //log("extrait("); log(chaine.toString()); log(max.toString()); log(index.toString()); log(taille.toString()); log(")");
     index = index - moit_max + moit_taille; if (index < 0) { index = 0; }
     let maxd = max;
     if (index + max > chaine.length) { max = chaine.length - index; } 
-    //log("index = " + index.toString()); log("max = " + max.toString());
     return par_chaine.substr(index, max) + ((maxd !== max) ? "" : "...");
 }
 
@@ -61,7 +59,7 @@ function une_ligne(par_chaine) {
 // Vérifie si une chaine ou un tableau contiennent une autre chaine
 function contient(par_var, par_test) {
     if (is_array(par_var)) {
-        for (i = 0; i < par_var.length; i++) { 
+        for (let i = 0; i < par_var.length; i++) { 
             if (is_array(par_var[i]) && contient(par_var[i], par_test)) { return true; }
             if (par_var[i] === par_test) { return true; } 
         }
@@ -79,7 +77,7 @@ function trouver_premier(par_arguments) {
         if (is_number(arguments[1])) {
             pos = arguments[1];
             na++;
-            if (arguments.length < 3) { log("trouver_premier(): Cette fonction doit avoir une de ces formes:\ntrouver_premier(chaine_de_base, chaine_un, chaine_deux....)\ntrouver_premier(chaine_de_base, position, chaine_un, ....)"); return null; }
+            if (arguments.length < 3) { console.log("trouver_premier(): Cette fonction doit avoir une de ces formes:\ntrouver_premier(chaine_de_base, chaine_un, chaine_deux....)\ntrouver_premier(chaine_de_base, position, chaine_un, ....)"); return null; }
         }
         let index_arg = -1; let index_str = -1;
         for (let i = na; i < arguments.length; i++) {
@@ -91,7 +89,7 @@ function trouver_premier(par_arguments) {
             }
         }
         if (index_arg <= -1) { return null; } else { return arguments[index_arg]; }
-    } else { log("trouver_premier(): Cette fonction doit avoir une de ces formes:\ntrouver_premier(chaine_de_base, chaine_un, chaine_deux....)\ntrouver_premier(chaine_de_base, position, chaine_un, ....)"); return null; }
+    } else { console.log("trouver_premier(): Cette fonction doit avoir une de ces formes:\ntrouver_premier(chaine_de_base, chaine_un, chaine_deux....)\ntrouver_premier(chaine_de_base, position, chaine_un, ....)"); return null; }
 }
 /* Recherche dans une chaîne de base et éventuellement jusqu'à une certaine position laquelle des sous-chaines passées en paramètres est située au plus près de la fin. */
 function trouver_dernier(par_arguments) {
@@ -100,7 +98,7 @@ function trouver_dernier(par_arguments) {
         if (is_number(arguments[1])) {
             pos = arguments[1];
             na++;
-            if (arguments.length < 3) { log("trouver_dernier(): Cette fonction doit avoir une de ces formes:\ntrouver_dernier(chaine_de_base, chaine_un, chaine_deux....)\ntrouver_dernier(chaine_de_base, position, chaine_un, ....)"); return null; }
+            if (arguments.length < 3) { console.log("trouver_dernier(): Cette fonction doit avoir une de ces formes:\ntrouver_dernier(chaine_de_base, chaine_un, chaine_deux....)\ntrouver_dernier(chaine_de_base, position, chaine_un, ....)"); return null; }
         }
         let index_arg = -1; let index_str = -1;
         for (let i = na; i < arguments.length; i++) {
@@ -112,7 +110,7 @@ function trouver_dernier(par_arguments) {
             }
         }
         if (index_arg <= -1) { return null; } else { return arguments[index_arg]; }
-    } else { log("trouver_dernier(): Cette fonction doit avoir une de ces formes:\ntrouver_dernier(chaine_de_base, chaine_un, chaine_deux....)\ntrouver_dernier(chaine_de_base, position, chaine_un, ....)"); return null; }
+    } else { console.log("trouver_dernier(): Cette fonction doit avoir une de ces formes:\ntrouver_dernier(chaine_de_base, chaine_un, chaine_deux....)\ntrouver_dernier(chaine_de_base, position, chaine_un, ....)"); return null; }
 }
 /* Recherche dans une chaîne de base et éventuellement à partir d'une certaine position laquelle des sous-chaines passées en paramètres est située au plus près du début et retourne sa position. */
 function position_premier(par_arguments) {
@@ -121,7 +119,7 @@ function position_premier(par_arguments) {
         if (is_number(arguments[1])) {
             pos = arguments[1];
             na++;
-            if (arguments.length < 3) { log("position_premier(): Cette fonction doit avoir une de ces formes:\nposition_premier(chaine_de_base, chaine_un, chaine_deux....)\nposition_premier(chaine_de_base, position, chaine_un, ....)"); return -1; }
+            if (arguments.length < 3) { console.log("position_premier(): Cette fonction doit avoir une de ces formes:\nposition_premier(chaine_de_base, chaine_un, chaine_deux....)\nposition_premier(chaine_de_base, position, chaine_un, ....)"); return -1; }
         }
         let index_arg = -1; let index_str = -1;
         for (let i = na; i < arguments.length; i++) {
@@ -133,7 +131,7 @@ function position_premier(par_arguments) {
             }
         }
         if (index_arg <= -1) { return -1; } else { return index_str; }
-    } else { log("position_premier(): Cette fonction doit avoir une de ces formes:\nposition_premier(chaine_de_base, chaine_un, chaine_deux....)\nposition_premier(chaine_de_base, position, chaine_un, ....)"); return -1; }
+    } else { console.log("position_premier(): Cette fonction doit avoir une de ces formes:\nposition_premier(chaine_de_base, chaine_un, chaine_deux....)\nposition_premier(chaine_de_base, position, chaine_un, ....)"); return -1; }
 }
 /* Recherche dans une chaîne de base et éventuellement jusqu'à une certaine position laquelle des sous-chaines passées en paramètres est située au plus près de la fin et retourne sa position. */
 function position_dernier(par_arguments) {
@@ -142,7 +140,7 @@ function position_dernier(par_arguments) {
         if (is_number(arguments[1])) {
             pos = arguments[1];
             na++;
-            if (arguments.length < 3) { log("position_dernier(): Cette fonction doit avoir une de ces formes:\nposition_dernier(chaine_de_base, chaine_un, chaine_deux....)\nposition_dernier(chaine_de_base, position, chaine_un, ....)"); return -1; }
+            if (arguments.length < 3) { console.log("position_dernier(): Cette fonction doit avoir une de ces formes:\nposition_dernier(chaine_de_base, chaine_un, chaine_deux....)\nposition_dernier(chaine_de_base, position, chaine_un, ....)"); return -1; }
         }
         let index_arg = -1; let index_str = -1;
         for (let i = na; i < arguments.length; i++) {
@@ -154,5 +152,5 @@ function position_dernier(par_arguments) {
             }
         }
         if (index_arg <= -1) { return -1; } else { return index_str; }
-    } else { log("position_dernier(): Cette fonction doit avoir une de ces formes:\nposition_dernier(chaine_de_base, chaine_un, chaine_deux....)\nposition_dernier(chaine_de_base, position, chaine_un, ....)"); return -1; }
+    } else { console.log("position_dernier(): Cette fonction doit avoir une de ces formes:\nposition_dernier(chaine_de_base, chaine_un, chaine_deux....)\nposition_dernier(chaine_de_base, position, chaine_un, ....)"); return -1; }
 }

@@ -30,6 +30,10 @@
     --colonnes-interface-g: 250px auto;          --lignes-interface-g: auto;
     --colonnes-interface-d: auto 250px;          --lignes-interface-d: auto;
     --colonnes-interface-b: auto;                --lignes-interface-b: auto 30px;
+    
+    /* Hauteurs et largeurs mini des onglets de classeur_tad */
+    --hauteur-onglet-classeur: 30px;
+    --largeur-onglet-classeur: 150px;
 }
 
 * {
