@@ -1,4 +1,4 @@
-# lib_tad (en cours de développement)
+# lib_tad (en cours de création)
 
 Librairie de développement pour simplifier la création de vos sites web et applications.
 
