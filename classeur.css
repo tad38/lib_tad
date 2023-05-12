@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.classeur_tad {  display: flex; flex-direction: column; position: relative; left: 0px; top: 0px; right: 0px; bottom: 0px; width: auto; height: auto; margin: 0px; padding: 5px; outline: 0px; border: 0px; }
+.classeur_tad > *:first-child {  display: flex; position: relative; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: var(--hauteur-onglet-classeur); margin: 0px; padding: 0px; outline: 0px; border: 0px; }
+.classeur_tad > *:last-child {  display: block; position: relative; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px; padding: 0px; outline: 0px; border: 0px; background-color: var(--gris-clair); }
+.classeur_tad > *:first-child > * {  display: inline-block; position: relative; left: 0px; top: 0px; right: 0px; bottom: 0px; width: auto; height: var(--hauteur-onglet-classeur); margin: 0px; padding: 3px; min-width: var(--largeur-onglet-classeur);
+                                     background-color: var(--gris); outline: 0px; border: 0px; float: left; text-align: center; cursor: pointer; }
+.classeur_tad > *:last-child > * {  display: none; position: relative; left: 0px; top: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%; margin: 0px; padding: 5px; overflow: auto; outline: 0px; border: 0px; }
+.classeur_tad > *:first-child > .selection { background-color: var(--gris-clair); cursor: default; }
+.classeur_tad > *:last-child > .selection { display: block; background-color: var(--gris-clair); }
