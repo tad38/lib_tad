@@ -38,10 +38,10 @@ class ObjetDomTad {
     get classes_txt() { return this.classes.join(" "); };
     
     /* Exécute une fonction sur tous les éléments de cet ObjetDomTad elle doit comporter au moins un argument qui sera l'ObjetDomTad de l'élément courant de la boucle.
-       Le retour sera un tableau des valeurs retournées par votre fonction (si il y'a un retour) pour chaque élément. */
-    a_tous(par_fonction) {
+       Le retour sera un tableau des valeurs retournées par votre fonction (si il y'a un retour) pour chaque élément. les autres arguments sont l'instance de cette classe, l'index par rapports ses éléments et un argument optionnel */
+    a_tous(par_fonction, par_arg_opt) {
             let tab_retour = [];
-            for (let i_a_tous = 0; i_a_tous < this.elements.length; i_a_tous++) { tab_retour[i_a_tous] = par_fonction(dom(this.elements[i_a_tous])); }
+            for (let i_a_tous = 0; i_a_tous < this.elements.length; i_a_tous++) { tab_retour[i_a_tous] = par_fonction(dom(this.elements[i_a_tous]), this, i_a_tous, par_arg_opt); }
             return tab_retour;
         }
     
@@ -103,7 +103,7 @@ class ObjetDomTad {
     set value(par_val) { this.a_tous(function(el) { el.element.value = par_val; }); }
     
     // ajout d'un ou plusieurs noms de classe pour cet objet
-    ajout_classe(par_classe) {
+    ajouter_classe(par_classe) {
             if (par_classe) {
                 let tmpm = mots(par_classe, ALPHANUM_MIN_MAJ + "-_");
                 for (let i = 0; i < tmpm.length; i++) { this.a_tous(function(el, obj, ind, opt) { el.elements[0].classList.add(opt); }, tmpm[i]); }
@@ -111,7 +111,7 @@ class ObjetDomTad {
             return this;
         };
     // supprime un ou plusieurs noms de classe dans cet objet
-    suppr_classe(par_classe) {
+    supprimer_classe(par_classe) {
             if (par_classe) {
                 let tmpm = mots(par_classe, ALPHANUM_MIN_MAJ + "-_");
                 for (let m in tmpm) { this.a_tous(function(el, obj, ind, opt) { el.elements[0].classList.remove(opt); }, m); }

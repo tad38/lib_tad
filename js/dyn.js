@@ -9,8 +9,9 @@ function maj_objets_dynamiques_tad() {
                 cont_pages.children[i].className = cont_pages.children[i].className.trim();
                 if (!contient(e.target.parentNode.children[i].className, "selection")) e.target.parentNode.children[i].className += " selection";
                 e.target.parentNode.children[i].className = e.target.parentNode.children[i].className.trim();
-            }
-            else { 
+                dom(e.target.parentNode.parentNode).attr("data-index", i.toString());
+                dom(e.target.parentNode.parentNode).attr("data-onglet", enc_html(dom(e.target).txt));
+            } else { 
                 cont_pages.children[i].className = cont_pages.children[i].className.replace("selection", "").replace("  ", " ").trim(); 
                 e.target.parentNode.children[i].className = e.target.parentNode.children[i].className.replace("selection", "").replace("  ", " ").trim(); 
             }
